@@ -1,0 +1,72 @@
+{
+    "user": {
+        "firstName": {
+            "type": "string",
+            "length": 50
+        },
+
+        "lastName": {
+            "type": "string",
+            "length": 50
+        },
+
+        "password": {
+            "type": "string",
+            "length": 40
+        },
+
+        "age": {
+            "type": "number"
+        }
+    },
+
+    "user_session": {
+        "user": {
+            "ref": "user"
+        },
+
+        "token": {
+            "type": "string",
+            "length": 250
+        },
+
+        "isOpen": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+
+    "post": {
+        "user": {
+            "ref": "user"
+        },
+
+        "title": {
+            "type": "string",
+            "length": 100
+        },
+
+        "content": {
+            "type": "string"
+        }
+    },
+
+    "*": {
+        "id": {
+            "type": "number",
+            "default": "AUTO_INCREMENT",
+            "primaryKey": true
+        },
+
+        "createdAt": {
+            "type": "datetime",
+            "default": "CURRENT_TIMESTAMP"
+        },
+
+        "updateAt": {
+            "type": "datetime",
+            "default": "CURRENT_TIMESTAMP",
+            "onUpdate": "CURRENT_TIMESTAMP"
+        }
+    }
+}
